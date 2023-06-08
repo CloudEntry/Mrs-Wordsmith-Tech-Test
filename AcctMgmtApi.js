@@ -34,7 +34,7 @@ app.get("/accounts/:id", (req, res) => {
     }
 });
 // Update an existing account
-// curl -X POST -H "Content-Type: application/json" -d '{"id": "1", "name": "John Doe", "address": "123 Low Street", "phone": "543210", "email": "doe.john@gmail.com"}' http://localhost:3000/accounts/1
+// curl -X PUT -H "Content-Type: application/json" -d '{"id": "1", "name": "John Doe", "address": "123 Low Street", "phone": "543210", "email": "doe.john@gmail.com"}' http://localhost:3000/accounts/1
 app.put("/accounts/:id", (req, res) => {
     const accountId = req.params.id;
     const { name, address, phone, email } = req.body;

@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 
 interface Account {
-  	id: string;
+    id: string;
     name: string;
     address: string;
     phone: string;
@@ -48,7 +48,7 @@ app.get("/accounts/:id", (req: Request, res: Response) => {
 });
 
 // Update an existing account
-// curl -X POST -H "Content-Type: application/json" -d '{"id": "1", "name": "John Doe", "address": "123 Low Street", "phone": "543210", "email": "doe.john@gmail.com"}' http://localhost:3000/accounts/1
+// curl -X PUT -H "Content-Type: application/json" -d '{"id": "1", "name": "John Doe", "address": "123 Low Street", "phone": "543210", "email": "doe.john@gmail.com"}' http://localhost:3000/accounts/1
 app.put("/accounts/:id", (req: Request, res: Response) => {
     const accountId: string = req.params.id;
     const { name, address, phone, email }: Account = req.body;
